@@ -1,0 +1,16 @@
+{
+  "name": "hooks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:StacksOS/hooks.git",
+  "author": "Ryan <ryan.waits@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@stacks/blockchain-api-client": "^5.0.1",
+    "@supabase/supabase-js": "^1.35.7",
+    "dotenv": "^16.0.3",
+    "js-yaml": "^4.1.0",
+    "socket.io-client": "^4.5.2"
+  }
+}

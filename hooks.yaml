@@ -1,0 +1,28 @@
+name: Proposal submission
+version: 1.0.0
+chain: stacks
+networks:
+  devnet:
+    url: "http://localhost:9999"
+    event:
+      contractAddress: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.proposal-submission
+      action: propose
+    callback:
+      endpoint: "http://localhost:3000/api/v1/submission"
+      method: POST
+  testnet:
+    url: "https://stacks-node-api.testnet.stacks.co"
+    event:
+      contractAddress: ST2BSV94A650WGZ2YZ5Y8HM93W01NGT4GY0MGJECG.og-club-vault
+      action: stx-deposit
+    callback:
+      endpoint: "http://localhost:3000/api/v1/submission"
+      method: POST
+  mainnet:
+    url: ""
+    event:
+      contractAddress: ST2BSV94A650WGZ2YZ5Y8HM93W01NGT4GY0MGJECG.proposal-submission
+      action: stx-deposit
+    callback:
+      endpoint: ""
+      method: POST
