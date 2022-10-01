@@ -2,7 +2,6 @@ import * as dotenv from "dotenv";
 import fetch from "node-fetch";
 import yaml from "js-yaml";
 import fs from "fs";
-import { io } from "socket.io-client";
 import { connectWebSocketClient } from "@stacks/blockchain-api-client";
 import { addSubmission } from "./api.js";
 
@@ -19,7 +18,8 @@ await client.subscribeAddressTransactions(
   async (event) => {
     try {
       const response = await fetch(
-        `${process.env.STACKS_API_URL}/extended/v1/tx/${event.tx_id}`
+        `${process.env.STACKS_API_URL}/extended/v1/tx/${event.tx_id}`,
+        {}
       );
       const data = await response.json();
       if (data?.contract_call?.function_name === chainhook?.event?.action) {
